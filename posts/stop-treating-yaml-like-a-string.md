@@ -2,15 +2,16 @@
 <h2>Stop Treating YAML Like a String</h2>
 <h3>A new approach to Kubernetes configuration management</h3>
 
-Koreo is a data structure orchestration engine. Although it's primarily
-designed for Kubernetes resource orchestration, Koreo's core functionality can
-orchestrate and manage virtually any structured data. What Koreo provides
-today, however, is a new approach to Kubernetes configuration management
-empowering developers and platform teams through programmable workflows. This
-approach draws upon the strengths of existing tools like Helm, Kustomize, and
-Crossplane while addressing some of their limitations. A foundational part of
-this lies in how Koreo handles configuration itself, specifically the
-distinction between "interpolation vs. overlay".
+<a href="http://koreo.dev" target="_blank">_Koreo_</a> is a data structure
+orchestration engine. Although it's primarily designed for Kubernetes resource
+orchestration, Koreo's core functionality can orchestrate and manage virtually
+any structured data. What Koreo provides today, however, is a new approach to
+Kubernetes configuration management empowering developers and platform teams
+through programmable workflows. This approach draws upon the strengths of
+existing tools like Helm, Kustomize, and Crossplane while addressing some of
+their limitations. A foundational part of this lies in how Koreo handles
+configuration itself, specifically the distinction between "interpolation vs.
+overlay".
             
 #### String-interpolated templates
 
