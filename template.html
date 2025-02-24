@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The YAML Engineer</title>
+    <meta name="description" content="A new approach to Kubernetes configuration management and resource orchestration.">
+    <meta name="keywords" content="YAML, Infrastructure as Code, IaC, Platform Engineering, DevOps, Kubernetes, Configuration Management, Resource Orchestration, Helm, Kustomize, Koreo">
+    <meta name="author" content="The YAML Engineer">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The YAML Engineer">
+    <meta property="og:description" content="A new approach to Kubernetes configuration management and resource orchestration.">
+    <meta property="og:url" content="https://theyamlengineer.com">
+    <meta property="og:image" content="https://theyamlengineer.com/img/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The YAML Engineer">
+    <meta name="twitter:description" content="A new approach to Kubernetes configuration management and resource orchestration.">
+    <meta name="twitter:image" content="https://theyamlengineer.com/img/og-image.jpg">
+    <meta name="twitter:site" content="@real_kinetic">
+
+    <link rel="canonical" href="https://theyamlengineer.com">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+</head>
+<body>
+    <div class="heroBackgroundContainer">
+        <div class="hero">
+            <div class="hero-title-container">
+                <img src="img/icons/hat-cowboy-thin.svg" alt="Cowboy Hat" class="cowboy-hat">
+                <a href="/">
+                    <h1>The YAML Engineer</h1>
+                </a>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tabButton active" onclick="showPost('yaml-post')">Stop Treating YAML Like a String</button>
+            <button class="tabButton" onclick="showPost('iac-post')">Controller-Driven Infrastructure as Code</button>
+        </div>
+    </div> 
+
+    <section class="blog-content">
+        <article id="yaml-post" class="post active">
+            <!-- YAML_POST_CONTENT -->
+            <div class="permalink">
+                <button onclick="copyPermalink(this)">
+                    <i class="fa-solid fa-link"></i> <span class="button-text">Copy Link</span>
+                </button>
+            </div>
+        </article>
+
+        <article id="iac-post" class="post">
+            <!-- IAC_POST_CONTENT -->
+            <div class="permalink">
+                <button onclick="copyPermalink(this)">
+                    <i class="fa-solid fa-link"></i> <span class="button-text">Copy Link</span>
+                </button>
+            </div>
+        </article>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Wrangle platform engineering</h2>
+            <a href="https://koreo.dev"><img class="koreo-logo" src="img/koreo-logo.png" alt="Koreo" /></a>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
