@@ -283,6 +283,7 @@ body {
 .cta-content {
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 1rem;
 }
 
 .cta h2 {
@@ -291,32 +292,14 @@ body {
     font-size: 2rem;
 }
 
-.cta a:not(.cta-button) {
-    color: #17065A;
-    font-weight: 500;
-}
-
-.cta a:not(.cta-button)::after {
-    background: #17065A;
-}
-
 .koreo-logo {
     width: 200px;
 }
 
-.cta-button {
-    display: inline-block;
-    background: #392488;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.cta-button:hover {
-    background: #17065A;
+.footer {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
 }
 
 @media (max-width: 768px) {
