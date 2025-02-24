@@ -2,7 +2,7 @@
 <h2>Stop Treating YAML Like a String</h2>
 <h3>A new approach to Kubernetes configuration management</h3>
 
-<a href="http://koreo.dev" target="_blank">_Koreo_</a> is a data structure
+<a href="http://koreo.dev" target="_blank">Koreo</a> is a data structure
 orchestration engine. Although it's primarily designed for Kubernetes resource
 orchestration, Koreo's core functionality can orchestrate and manage virtually
 any structured data. What Koreo provides today, however, is a new approach to

@@ -73,7 +73,7 @@ ourselves.
 #### Introducing Koreo: Programming control loops for modern platforms
 
 To address this need and deliver the full potential of Controller-Driven IaC,
-we've developed and open-sourced <a href="http://koreo.dev" target="_blank">_Koreo_</a>,
+we've developed and open-sourced <a href="http://koreo.dev" target="_blank">Koreo</a>,
 a platform engineering toolkit for Kubernetes. Koreo is a new approach to
 Kubernetes configuration management and resource orchestration empowering
 developers through programmable workflows and structured data. It enables
