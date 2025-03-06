@@ -6,7 +6,7 @@ Infrastructure as Code (IaC) revolutionized how we manage infrastructure,
 enabling developers to define resources declaratively and automate their
 deployment. However, tools like Terraform and CloudFormation, despite their
 declarative configuration, rely on an _operation-centric model_, where
-resources are created or updated through one-time commands.
+resources are created or updated through one-shot commands.
 
 #### The evolution of IaC: From operations to controllers
 
