@@ -24,7 +24,7 @@ as Elm UI or JSX-based approaches, offer cleaner, more structured HTML
 generation, most languages lack robust built-in mechanisms for this. And, no
 language lets you actually manipulate HTML with any confidence or precision.
 HTML is so painful that it is easier to treat as a string and, thus, we have
-the value of string-interpolation-based templates.
+string-interpolation-based templates.
 
 Really, this is fine for many text-encoded data structures. Visually, when
 you've got one value to set within a data structure like YAML, it's clear that
@@ -36,7 +36,7 @@ Perhaps it even makes sense when you have a number of values you'd like to set:
 
 <img class="px200" alt="Setting multiple values in YAML" src="img/posts/stop-treating-yaml-like-a-string/yaml_multi_blue_lines.png" />
 
-For simple use cases, that isn't too bad really. But when you start having
+For simple use cases, that isn't too bad. But when you start having
 _conditionals_ where you're swapping sets of values, where you're toggling stuff
 on and off, and interspersing those needs… it gets hairy:
 
@@ -69,6 +69,20 @@ templates though. For simple cases, it makes sense enough—it's not _that_ bad 
 set a value via templating. Even when passing in multiple values, it's probably
 still ok. But, once you're at control-flow constructs like conditionals, this
 is not the right solution.
+
+String templating isn't the only approach that has been used to manage
+Kubernetes configurations. Configuration languages like Jsonnet, Cue, and Dhall
+attempt to solve some of these challenges by treating configuration as
+structured data rather than text. These languages introduce programming
+constructs like variables, conditionals, and functions while maintaining a
+declarative model. However, they often introduce their own complexity. Jsonnet,
+for example, provides a powerful way to generate JSON/YAML but can quickly
+become difficult to debug due to its evaluation model. Cue enforces strong
+validation but requires a different way of thinking about constraints and
+configurations. Each of these tools attempts to move beyond naive string
+interpolation and offer a step in the right direction, but they still
+operate largely as external DSLs rather than being deeply integrated into
+the Kubernetes resource model.
 
 #### Templates contain business logic
 
@@ -185,3 +199,16 @@ built-in testing framework and IDE integration, Koreo makes working with
 Kubernetes configuration feel more like actual programming. Ultimately, it
 provides a platform engineering toolkit that allows you to build powerful
 abstractions on top of Kubernetes.
+
+But configuration is only one part of the story. Managing infrastructure
+effectively requires not just better configuration management, but also a way
+to orchestrate and reconcile changes over time. This is where Koreo extends
+beyond just managing structured data—it provides a controller-driven model that
+ensures configuration changes are continuously reconciled, just like Kubernetes
+itself does for workloads.
+
+Rather than treating Kubernetes resources as static manifests to be generated
+and applied, Koreo embraces a dynamic, event-driven model where configurations
+are continuously managed and updated based on changing conditions. This moves
+beyond just treating configuration as structured data—it enables a truly
+[controller-driven approach to infrastructure management](/?tab=iac-post).

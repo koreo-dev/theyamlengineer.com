@@ -33,7 +33,7 @@ you to actually provide a clean API for common architectural needs that
 encapsulates a lot of routine business logic. Extending this model to IaC is
 something we call _Controller-Driven IaC_.
 
-#### Controller-driven IaC
+#### Building on the Kubernetes controller model
 
 Controller-Driven IaC builds upon the Kubernetes foundation, leveraging its
 controllers to reconcile cloud resources and maintain continuous alignment
@@ -72,6 +72,14 @@ ourselves.
 
 #### Introducing Koreo: Programming control loops for modern platforms
 
+There are tools such as [Crossplane](https://www.crossplane.io) that take a
+controller-oriented approach to infrastructure, but they introduce their own
+challenges and limitations. In particular, we really need the ability to
+compose arbitrary Kubernetes resources and controllers, not just specific
+provider APIs. What if we could treat _anything_ in Kubernetes as a
+referenceable object capable of acting as the input or output to an automated
+workflow, and without the need for building tons of CRDs or custom Operators? 
+
 To address this need and deliver the full potential of Controller-Driven IaC,
 we've developed and open-sourced <a href="http://koreo.dev" target="_blank">Koreo</a>,
 a platform engineering toolkit for Kubernetes. Koreo is a new approach to
@@ -104,7 +112,7 @@ manage Kubernetes configurations and resource orchestration in a way that is
 better suited to modern infrastructure challenges. It offers a solution that
 scales with complexity. A built-in testing framework makes it easy to quickly
 validate configuration and iterate on infrastructure, and IDE integration gives
-developers real-time feedback, autocomplete, and introspection.
+developers a familiar programming-like experience.
 
 #### The future of infrastructure management is controller-driven
 
@@ -113,10 +121,10 @@ Koreo bridges the gap between declarative configuration and dynamic
 infrastructure management. It moves beyond the limitations of traditional IaC,
 offering a truly Kubernetes-native approach that brings the benefits of control
 loops, composability, and continuous reconciliation to your entire platform.
-With Koreo, you're not just managing resources; you're building a self-service
-platform that empowers developers to innovate within defined boundaries. You're
-automating complex workflows, enforcing organizational policies, and ensuring
-consistency across your entire infrastructure landscape, all through the power
-of Kubernetes controllers and programmable workflows.
+With Koreo, you're not just managing resources; you're composing Kubernetes
+controllers to do powerful things like building internal developer platforms,
+managing multi-cloud infrastructure, or orchestrating application deployments
+and other complex workflows.
+
 
 See what you can build with <a href="https://koreo.dev" target="_blank">Koreo</a>.
