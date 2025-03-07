@@ -52,3 +52,51 @@ function loadTabFromUrl() {
 window.onload = loadTabFromUrl;
 
 window.addEventListener("popstate", loadTabFromUrl);
+
+document.addEventListener("DOMContentLoaded", function () {
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  // Create modal element
+  const modal = document.createElement("div");
+  modal.classList.add("image-modal");
+  modal.innerHTML = `
+        <span class="close-btn">&times;</span>
+        <img src="" alt="Full Image">
+    `;
+  document.body.appendChild(modal);
+
+  const modalImg = modal.querySelector("img");
+  const closeButton = modal.querySelector(".close-btn");
+
+  // Add click event only to images with the modal class if not on mobile
+  document.querySelectorAll(".post img.modal").forEach((img) => {
+    if (!isMobile()) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        modalImg.src = this.src;
+        modal.style.display = "flex";
+      });
+    }
+  });
+
+  closeButton.addEventListener("click", () => (modal.style.display = "none"));
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (isMobile()) {
+      document
+        .querySelectorAll(".post img.modal")
+        .forEach((img) => (img.style.cursor = "default"));
+    } else {
+      document
+        .querySelectorAll(".post img.modal")
+        .forEach((img) => (img.style.cursor = "pointer"));
+    }
+  });
+});

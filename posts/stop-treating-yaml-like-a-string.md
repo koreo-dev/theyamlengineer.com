@@ -152,7 +152,7 @@ always testable because they are pure functions and Koreo contains a
 first-class testing framework that is built into the language itself. You can
 test the entire set of overlays to ensure the resource is correct:
 
-<img class="codeBorder" alt="Koreo ResourceFunction and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_resource_function_with_overlays_and_test.png" />
+<img class="codeBorder modal" alt="Koreo ResourceFunction and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_resource_function_with_overlays_and_test.png" />
 <span class="caption">A Koreo ResourceFunction and accompanying FunctionTest for building an S3 bucket with overlays</span>
 
 But you can actually test each overlay in isolation via the same testing
@@ -171,7 +171,7 @@ configuration is enabled, the compliance team wants to ensure data-retention
 policies are set, and the SRE team wants to ensure data replication is
 configured appropriately.
 
-<img class="codeBorder" alt="Koreo ValueFunction used as an overlay and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_value_function_overlay_and_test.png" />
+<img class="codeBorder modal" alt="Koreo ValueFunction used as an overlay and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_value_function_overlay_and_test.png" />
 <span class="caption">A Koreo ValueFunction and accompanying FunctionTest used as an overlay by the S3 ResourceFunction for enabling lifecycle rules</span>
 
 #### Treating configuration as code—but this time for real
