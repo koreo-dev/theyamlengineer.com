@@ -15,7 +15,7 @@ overlay".
             
 #### String-interpolated templates
 
-String-interpolation-based templating, like Helm, has its roots in the
+String-interpolation-based templating like Helm has its roots in the
 rudimentary templating approaches of early web technologies such as CGI, PHP,
 and ASP.NET. This pattern persists in many popular templating solutions (like
 Jinja and Go templates) because HTML's complex structure makes it notoriously
@@ -42,7 +42,7 @@ on and off, and interspersing those needs… it gets hairy:
 
 <img class="px200" alt="Toggling values in YAML" src="img/posts/stop-treating-yaml-like-a-string/yaml_purple_toggles.png" />
 
-When using a string-interpolation-based template, like Helm, each of those
+When using a string-interpolation-based template like Helm each of those
 becomes something like this, at best:
 
 <img class="px500" alt="Helm toggling" src="img/posts/stop-treating-yaml-like-a-string/yaml_conditional.png" />
@@ -152,8 +152,8 @@ always testable because they are pure functions and Koreo contains a
 first-class testing framework that is built into the language itself. You can
 test the entire set of overlays to ensure the resource is correct:
 
-<img class="codeBorder" alt="Koreo ResourceFunction and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_resource_function_and_test.png" />
-<span class="caption">A Koreo ResourceFunction for building an AWS VPC and accompanying FunctionTest</span>
+<img class="codeBorder" alt="Koreo ResourceFunction and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_resource_function_with_overlays_and_test.png" />
+<span class="caption">A Koreo ResourceFunction and accompanying FunctionTest for building an S3 bucket with overlays</span>
 
 But you can actually test each overlay in isolation via the same testing
 framework. That means rather than an _insane_ huge template that you're trying to
@@ -163,6 +163,16 @@ and that they update the correct fields with the correct values. Then you can
 write a few tests to ensure the correct overlays are applied and that they work
 together correctly. It is like some form of black magic, and no sacrifices were
 even required—_just treating structured data like structured data_.
+
+This layered approach to resource materialization provides a means for
+"factoring" different configuration concerns into reusable, testable building
+blocks. For instance, the security team wants to ensure specific encryption
+configuration is enabled, the compliance team wants to ensure data-retention
+policies are set, and the SRE team wants to ensure data replication is
+configured appropriately.
+
+<img class="codeBorder" alt="Koreo ValueFunction used as an overlay and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_value_function_overlay_and_test.png" />
+<span class="caption">A Koreo ValueFunction and accompanying FunctionTest used as an overlay by the S3 ResourceFunction for enabling lifecycle rules</span>
 
 #### Treating configuration as code—but this time for real
 
@@ -178,7 +188,7 @@ validation but requires a different way of thinking about constraints and
 configurations. Each of these tools attempts to move beyond naive string
 interpolation and offer a step in the right direction, but they still
 operate largely as external DSLs rather than being deeply integrated into
-the Kubernetes resource model.
+the Kubernetes Resource Model.
 
 Koreo's built-in test framework is designed for testing async, event-driven
 control loops without requiring a tremendous amount of boilerplate or test
@@ -190,10 +200,10 @@ working in a real programming language rather than twiddling YAML or editing
 string-interpolated templates.
 
 This represents a fundamental shift in how we approach Kubernetes
-configuration management and structured data orchestration. By moving beyond
-string-interpolated templates and embracing a more structured, programmatic
-approach native to Kubernetes, Koreo provides a cleaner, more maintainable way
-to manage complicated configurations. Its overlay system allows for precise,
+configuration management and structured data orchestration. Koreo simplifies
+the management of complex configurations. It achieves this by moving away from
+string-interpolated templates and adopting a structured, programmatic approach
+that's native to Kubernetes. Its overlay system allows for precise,
 testable updates, eliminating the fragility and complexity of traditional
 templating. With a built-in testing framework and IDE integration, Koreo makes
 working with Kubernetes configuration feel more like actual programming.
@@ -210,5 +220,6 @@ Kubernetes itself does for workloads.
 Rather than treating Kubernetes resources as static manifests to be generated
 and applied, Koreo embraces a dynamic, event-driven model where configurations
 are continuously managed and updated based on changing conditions. This moves
-beyond just treating configuration as structured data—it enables a truly
-[controller-driven approach to infrastructure management](/?tab=iac-post).
+beyond just treating configuration as structured data. It enables a truly
+[controller-driven approach to infrastructure management](/?tab=iac-post) by
+providing a way to program and compose control loops.
