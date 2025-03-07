@@ -220,7 +220,6 @@ body {
     max-width: 95%;
     max-height: 95%;
     border-radius: 8px;
-    border: solid 8px #0e101a;
 }
 
 .image-modal .close-btn {
@@ -234,6 +233,10 @@ body {
 
 .px200 {
     width: 200px;
+}
+
+.px400 {
+    width: 400px;
 }
 
 .px500 {

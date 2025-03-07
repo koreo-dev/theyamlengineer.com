@@ -72,15 +72,19 @@ ourselves.
 
 #### Introducing Koreo: Programming control loops for modern platforms
 
-There are tools such as [Crossplane](https://www.crossplane.io) that take a
-controller-oriented approach to infrastructure, but they introduce their own
-challenges and limitations. In particular, we really need the ability to
-compose arbitrary Kubernetes resources and controllers, not just specific
+There are tools such as <a href="https://www.crossplane.io" target="_blank">Crossplane</a>
+that take a controller-oriented approach to infrastructure, but they have
+their own challenges and limitations. In particular, we really need the ability
+to compose arbitrary Kubernetes resources and controllers, not just specific
 provider APIs. What if we could treat _anything_ in Kubernetes as a
 referenceable object capable of acting as the input or output to an automated
-workflow, and without the need for building tons of CRDs or custom Operators? 
+workflow, and without the need for building tons of CRDs or custom Operators?
+Additionally, it's critical that resources can be namespaced rather than
+cluster-scoped to support multi-tenant environments and that the corresponding
+infrastructure can live in cloud projects or accounts separate from where the
+control plane itself lives.
 
-To address this need and deliver the full potential of Controller-Driven IaC,
+To address these needs and deliver the full potential of Controller-Driven IaC,
 we've developed and open-sourced <a href="http://koreo.dev" target="_blank">Koreo</a>,
 a platform engineering toolkit for Kubernetes. Koreo is a new approach to
 Kubernetes configuration management and resource orchestration empowering
@@ -89,6 +93,9 @@ seamless integration and automation around the Kubernetes Resource Model,
 supporting a wide range of use cases centered on Controller-Driven IaC. Koreo
 serves as a _meta-controller programming language_ and runtime that allows you
 to compose control loops into powerful abstractions.
+
+<img class="modal" alt="Workflow in Koreo UI" src="img/posts/controller-driven-infrastructure-as-code/koreo_ui.png" />
+<span class="caption">The Koreo UI showing a workflow for a custom AWS workload abstraction</span>
 
 Koreo is specifically built to empower platform engineering teams and DevOps
 engineers by allowing them to provide Architecture-as-Code building blocks to
@@ -99,6 +106,9 @@ example, you can develop a "StatelessCrudApp" that allows development teams to
 enable company-standard databases and caches with minimal effort. Similarly,
 you can build flexible automations that combine and orchestrate various
 Kubernetes primitives.
+
+<img class="px400 modal" alt="Workload example" src="img/posts/controller-driven-infrastructure-as-code/workload_example.png" />
+<span class="caption">An instance of the custom AWS workload abstraction</span>
 
 Where Koreo really shines, however, is making it fast and safe to add new
 capabilities to your internal developer platform. Existing configuration
