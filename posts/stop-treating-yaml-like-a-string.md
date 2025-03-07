@@ -211,7 +211,7 @@ Ultimately, it provides a platform engineering toolkit that allows you to build
 powerful abstractions on top of Kubernetes.
 
 But configuration is only one part of the story. Managing infrastructure
-effectively requires not just better configuration management, but also a way
+effectively requires not only better configuration management, but also a way
 to orchestrate resources and reconcile changes over time. This is where Koreo
 extends beyond just managing structured data—it provides a controller-driven
 model that ensures configuration changes are continuously reconciled, just like
@@ -219,7 +219,7 @@ Kubernetes itself does for workloads.
 
 Rather than treating Kubernetes resources as static manifests to be generated
 and applied, Koreo embraces a dynamic, event-driven model where configurations
-are continuously managed and updated based on changing conditions. This moves
-beyond just treating configuration as structured data. It enables a truly
-[controller-driven approach to infrastructure management](/?tab=iac-post) by
-providing a way to program and compose control loops.
+are continuously managed and updated based on changing conditions. This allows
+us to do more than simply treat configuration as structured data. It enables a
+truly [controller-driven approach to infrastructure management](/?tab=iac-post)
+by providing a way to program and compose control loops.
