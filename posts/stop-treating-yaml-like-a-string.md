@@ -1,4 +1,4 @@
-<p class="post-date">February 24, 2025</p>
+<p class="post-date">February 24, 2025 | Robert Kluin</p>
 <h2>Stop Treating YAML Like a String</h2>
 <h3>A new approach to Kubernetes configuration management</h3>
 
@@ -51,7 +51,7 @@ It gets worse with complexity, such as a nested conditional like this:
 
 <img class="px200" alt="Complex YAML conditional" src="img/posts/stop-treating-yaml-like-a-string/yaml_complex_conditional.png" />
 
-These become very unwieldy to reason about and manage. Really, at that point
+These become very unwieldy to reason about and manage. Really, at this point
 someone should have stopped and asked "what am I doing here?" If not, then
 certainly when you find yourself typing "indent 2" you should be asking some
 questions. We're dealing with well-defined, structured data formats after all.
