@@ -1,4 +1,4 @@
-<p class="post-date">February 24, 2025 | Robert Kluin</p>
+<p class="post-date">March 19, 2025 | Robert Kluin</p>
 <h2>Stop Treating YAML Like a String</h2>
 <h3>A new approach to Kubernetes configuration management</h3>
 
@@ -174,7 +174,7 @@ configured appropriately.
 <img class="codeBorder modal" alt="Koreo ValueFunction used as an overlay and FunctionTest" src="img/posts/stop-treating-yaml-like-a-string/koreo_value_function_overlay_and_test.png" />
 <span class="caption">A Koreo ValueFunction and accompanying FunctionTest used as an overlay by the S3 ResourceFunction for enabling lifecycle rules</span>
 
-#### Treating configuration as code—but this time for real
+#### Treating configuration as code
 
 Of course, string templating isn't the only approach that has been used to
 manage Kubernetes configurations. Configuration languages like Jsonnet, Cue,
@@ -185,10 +185,14 @@ declarative model. However, they often introduce their own complexity. Jsonnet,
 for example, provides a powerful way to generate JSON/YAML but can quickly
 become difficult to debug due to its evaluation model. Cue enforces strong
 validation but requires a different way of thinking about constraints and
-configurations. Each of these tools attempts to move beyond naive string
-interpolation and offer a step in the right direction, but they still
-operate largely as external DSLs rather than being deeply integrated into
-the Kubernetes Resource Model.
+configurations.
+
+Each of these tools attempts to move beyond naive string interpolation and
+offer a step in the right direction, but they still operate largely as external
+DSLs rather than being deeply integrated into the Kubernetes Resource Model.
+There's power in being able to leverage a "real" programming language for
+configuration, but sometimes being overly expressive is a drawback. What we
+want is a nice balance of expressiveness that is still deterministic.
 
 Koreo's built-in test framework is designed for testing async, event-driven
 control loops without requiring a tremendous amount of boilerplate or test
@@ -209,6 +213,8 @@ templating. With a built-in testing framework and IDE integration, Koreo makes
 working with Kubernetes configuration feel more like actual programming.
 Ultimately, it provides a platform engineering toolkit that allows you to build
 powerful abstractions on top of Kubernetes.
+
+#### Configuration management + resource orchestration
 
 But configuration is only one part of the story. Managing infrastructure
 effectively requires not only better configuration management, but also a way
