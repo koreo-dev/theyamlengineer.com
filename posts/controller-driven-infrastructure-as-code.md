@@ -1,4 +1,4 @@
-<p class="post-date">February 24, 2025 | Tyler Treat</p>
+<p class="post-date">March 19, 2025 | Tyler Treat</p>
 <h2>Controller-Driven Infrastructure as Code</h2>
 <h3>Harnessing the Kubernetes Resource Model for modern infrastructure management</h3>
 
