@@ -194,14 +194,20 @@ There's power in being able to leverage a "real" programming language for
 configuration, but sometimes being overly expressive is a drawback. What we
 want is a nice balance of expressiveness that is still deterministic.
 
-Koreo's built-in test framework is designed for testing async, event-driven
+Koreo strikes that balance by embedding structured configuration directly into
+Kubernetes in conjunction with resource orchestration. Instead of treating
+configuration as text or an external DSL, Koreo provides a native, programmatic
+approach that integrates seamlessly with the Kubernetes Resource Model. This
+structured foundation enables features that go beyond simple templating—such as
+its built-in test framework, which is designed for testing async, event-driven
 control loops without requiring a tremendous amount of boilerplate or test
 harness setup. It makes modeling complex scenarios easy and supports validating
-happy paths, error handling, and template rendering. The Koreo language server
-integrates with your IDE so you get real-time feedback, autocomplete, and
-introspection. It makes creating and manipulating data structures feel like
-working in a real programming language rather than twiddling YAML or editing
-string-interpolated templates.
+happy paths, error handling, and template rendering.
+
+Additionally, the Koreo language server integrates with your IDE, providing
+real-time feedback, autocomplete, and introspection. This makes creating and
+manipulating data structures feel like working in a real programming language
+rather than twiddling YAML or editing string-interpolated templates.
 
 This represents a fundamental shift in how we approach Kubernetes
 configuration management and structured data orchestration. Koreo simplifies
