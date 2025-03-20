@@ -115,14 +115,16 @@ capabilities to your internal developer platform. Existing configuration
 management tools like Helm and Kustomize, while useful for simpler
 configurations, become unwieldy when dealing with the intricacies of modern
 Kubernetes deployments. They ultimately treat configuration as static data, and
-this becomes problematic as configuration evolves in complexity. Koreo instead
-embraces configuration as code by providing a programming language and runtime
-with robust developer tooling. This allows platform engineers to define and
-manage Kubernetes configurations and resource orchestration in a way that is
-better suited to modern infrastructure challenges. It offers a solution that
-scales with complexity. A built-in testing framework makes it easy to quickly
-validate configuration and iterate on infrastructure, and IDE integration gives
-developers a familiar programming-like experience.
+this becomes problematic as configuration evolves in complexity.
+
+Koreo instead embraces configuration as code by providing a programming
+language and runtime with robust developer tooling. This allows platform
+engineers to define and manage Kubernetes configurations and resource
+orchestration in a way that is better suited to modern infrastructure
+challenges. It offers a solution that scales with complexity. A built-in
+testing framework makes it easy to quickly validate configuration and iterate
+on infrastructure, and IDE integration gives developers a familiar
+programming-like experience.
 
 #### The future of infrastructure management is controller-driven
 
